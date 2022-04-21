@@ -52,7 +52,10 @@ submit.addEventListener("click", () => {
   if (todo.value != "") {
     item.todo = todo.value;
   } else {
-    item.todo = "ダミーTODO";
+    window.alert('タスクを入力してください');
+  //  item.todo = "ダミーTODO";
+  return;
+
   }
   item.priority = priority.value;
   if (deadline.value != "") {
@@ -73,15 +76,15 @@ submit.addEventListener("click", () => {
 });
 
 const filterButton = document.createElement("button");
-filterButton.textContent = "優先度（高）で絞り込み";
-filterButton.id = "priority";
-const main = document.querySelector("main");
-main.appendChild(filterButton);
+  filterButton.textContent = "優先度（高）で絞り込み";
+  filterButton.id = "priority";
+  const main = document.querySelector("main");
+  main.appendChild(filterButton);
 
-filterButton.addEventListener("click", () => {
-  const newList = list.filter((item) => item.priority == "高");
-  clearTable();
-  newList.forEach((item) => addItem(item));
+  filterButton.addEventListener("click", () => {
+    const newList = list.filter((item) => item.priority == "高");
+    clearTable();
+    newList.forEach((item) => addItem(item));
 });
 
 const clearTable = () => {
@@ -92,8 +95,29 @@ const clearTable = () => {
   }
 };
 
+
+const filterButton2 = document.createElement("button");
+  filterButton2.textContent = "優先度（普）で絞り込み";
+  filterButton2.id = "priority2";
+  const hu = document.querySelector("hu");
+  main.appendChild(filterButton2);
+
+  filterButton.addEventListener("click", () => {
+    const newList = list.filter((item) => item.priority == "普");
+    clearTable();
+    newList.forEach((item) => addItem(item));
+});
+
+const clearTable2 = () => {
+  const trList = Array.from(document.getElementsByTagName("tr"));
+  trList.shift();
+  for (const tr of trList) {
+    tr.remove();
+  }
+};
+
 const remove = document.createElement("button");
-remove.textContent = "完了したTODOを削除する";
+remove.textContent = "完了したTODOを削除して再表示";
 remove.id = "remove";
 const br = document.createElement("br");
 main.appendChild(br);
@@ -105,3 +129,4 @@ remove.addEventListener("click", () => {
   list.forEach((item) => addItem(item));
   storage.todoList = JSON.stringify(list);
 });
+

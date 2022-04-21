@@ -7,7 +7,7 @@ main {
 }
 input, select { margin: 0.5rem 1rem 0.5rem 0; }
 input[type='number'] { width: 30px; }
-button#submit, button#priority, button#remove {
+button#submit, button#priority, button#priority2, button#remove {
   padding: 5px 10px;
   margin-top: 1rem;
   background-color: royalblue;
@@ -15,6 +15,7 @@ button#submit, button#priority, button#remove {
   border-style: none;
 }
 button#priority { background-color: olivedrab; }
+button#priority2 { background-color:rgb(51, 35, 142) } 
 button#remove { background-color: firebrick; }
 table {
   margin-top: 2rem;
