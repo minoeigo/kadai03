@@ -8,25 +8,30 @@
     <title>TODO-List</title>
     <link rel="stylesheet" href="CSS/reset.css" />
     <link rel="stylesheet" href="CSS/style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Kiwi+Maru:wght@300&family=Open+Sans:ital,wght@0,700;1,400&family=Yuji+Syuku&display=swap" rel="stylesheet">
 </head>
 
 <body>
-  <h1>TODO-List</h1>
 
-  <main>
-    <div id="input">
+    <h1>Do what to do</h1>
+    <p>If you put your mind to it, you can accomplish anything.</p>
+<br>
+  <main class="main1">
+    <div id="input" >
       <label>TODO: <input id="todo"></label><br>
       優先度: <select>
-        <option>低</option>
-        <option selected>普</option>
-        <option>高</option>
+        <option id="pri2">低</option>
+        <option selected id="pri2">普</option>
+        <option id="pri1">高</option>
       </select>
       <label>期日: <input type="date"></label><br>
       <button id="submit">登録</button>
     </div>
  
     
-    <table>
+    <table >
       <tr>
         <th id="todoLabel" >TODO</th>
         <th id="priorityLabel">優先度</th>

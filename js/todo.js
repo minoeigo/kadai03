@@ -80,6 +80,8 @@ const filterButton = document.createElement("button");
   filterButton.id = "priority";
   const main = document.querySelector("main");
   main.appendChild(filterButton);
+  const br2 = document.createElement("br");
+  main.appendChild(br2); 
 
   filterButton.addEventListener("click", () => {
     const newList = list.filter((item) => item.priority == "高");
@@ -95,15 +97,17 @@ const clearTable = () => {
   }
 };
 
-// 追加してみたけども
+// 追加してみたところ
 
 const filterButton2 = document.createElement("button");
   filterButton2.textContent = "優先度（普）で絞り込み";
   filterButton2.id = "priority2";
   const hu = document.querySelector("hu");
   main.appendChild(filterButton2);
+  const br3 = document.createElement("br");
+  main.appendChild(br3); 
 
-  filterButton.addEventListener("click", () => {
+  filterButton2.addEventListener("click", () => {
     const newList = list.filter((item) => item.priority == "普");
     clearTable();
     newList.forEach((item) => addItem(item));
@@ -116,6 +120,28 @@ const clearTable2 = () => {
     tr.remove();
   }
 };
+
+const filterButton3 = document.createElement("button");
+  filterButton3.textContent = "優先度（低）で絞り込み";
+  filterButton3.id = "priority3";
+  const tei = document.querySelector("tei");
+  main.appendChild(filterButton3);
+
+  filterButton3.addEventListener("click", () => {
+    const newList = list.filter((item) => item.priority == "低");
+    clearTable();
+    newList.forEach((item) => addItem(item));
+});
+
+const clearTable3 = () => {
+  const trList = Array.from(document.getElementsByTagName("tr"));
+  trList.shift();
+  for (const tr of trList) {
+    tr.remove();
+  }
+};
+
+//追加ここまで
 
 const remove = document.createElement("button");
 remove.textContent = "完了したTODOを削除して再表示";
@@ -130,4 +156,3 @@ remove.addEventListener("click", () => {
   list.forEach((item) => addItem(item));
   storage.todoList = JSON.stringify(list);
 });
-
