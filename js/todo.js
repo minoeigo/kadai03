@@ -95,6 +95,7 @@ const clearTable = () => {
   }
 };
 
+// 追加してみたけども
 
 const filterButton2 = document.createElement("button");
   filterButton2.textContent = "優先度（普）で絞り込み";

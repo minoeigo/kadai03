@@ -15,7 +15,7 @@ button#submit, button#priority, button#priority2, button#remove {
   border-style: none;
 }
 button#priority { background-color: olivedrab; }
-button#priority2 { background-color:rgb(51, 35, 142) } 
+button#priority2 { background-color:rgb(51, 35, 142) } /* 普通用*/
 button#remove { background-color: firebrick; }
 table {
   margin-top: 2rem;
